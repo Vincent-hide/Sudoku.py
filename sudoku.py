@@ -26,9 +26,18 @@ def print_matrix(matrix):
             else:
                 print(str(matrix[i][s]) + " ", end="")
 
-# return tuple of row and col, if the cell is 0            
+# return tuple of row and col, if a cell is 0            
 def find_empty(matrix):
     for i in range(size):
         for s in range(size):
             if matrix[i][s] == 0:
-                return (i, s) 
+                return (i, s)
+                
+
+def validity(matrix, num, pos):
+    # iterate each row
+    for i in range(size):
+        if matrix[pos[0]][i] == num and pos[1] != i:
+            return False
+        
+    
